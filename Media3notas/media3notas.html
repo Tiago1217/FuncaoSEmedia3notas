@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovado/Reprovado</title>
+    </head>
+<body leftmargin="80" topmargin="80">
+
+   <h1>Média das três notas</h1>
+   <p>Nome aluno: <span id="NOMEALUNO" > </span> </p>
+   <p>Nome professor: <span id="NOMEPROFESSOR" > </span> </p>
+   <p>Nota 1: <span id="NOTA1" > </span></p>  
+   <p>Nota 2: <span id="NOTA2" > </span></p>
+   <p>Nota 3: <span id="NOTA3" > </span></p>
+   <p>Média Aritimética: <span id="MÉDIAARI" > </span></p>
+
+<script>
+
+let NOMEALUNO = prompt("Qual o nome do aluno?")
+let NOMEPROFESSOR = prompt("Qual é o nome do Professor?")
+let NOTA1 = Number(prompt("Digite a primeira Nota"))
+let NOTA2 = Number(prompt("Digite a segunda Nota"))
+let NOTA3 = Number(prompt("Digite a terceira Nota"))
+let MEDIAARI=((NOTA1+NOTA2+NOTA3)/3).toFixed(2);
+let SITUACAO;
+
+if(MEDIAARI <4){
+    SITUACAO =  "Retido";
+}else if (MEDIAARI <7){
+    SITUACAO = "Recuperação";
+}else if (MEDIAARI <11){
+    SITUACAO = "Aprovado";
+}else {
+    SITUACAO="Esta Média é inválida";
+}
+
+document.getElementById("NOMEALUNO").innerHTML = NOMEALUNO;
+document.getElementById("NOMEPROFESSOR").innerHTML = NOMEPROFESSOR;
+document.getElementById("NOTA1").innerHTML = NOTA1;
+document.getElementById("NOTA2").innerHTML = NOTA2;
+document.getElementById("NOTA3").innerHTML = NOTA3;
+document.getElementById("MÉDIAARI").innerHTML = MEDIAARI;
+
+
+</script>
+</body>
+</html>
